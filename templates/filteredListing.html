@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>Filtered Book Listings</title>
+    <style>
+        body {
+            background-color: #488dfa;
+            color: white;
+            font-family: sans-serif;
+        }
+        
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+    
+        table {
+            margin: 20px auto;
+            background-color: #488dfa;
+            border-collapse: collapse;
+            border-radius: 10px;
+        }
+    
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    
+        th {
+            background-color: #488dfa;
+            color: white;
+        }
+          
+        tr:nth-child(even) {
+            background-color: #3f7bfa;
+        }
+          
+        tr:nth-child(odd) {
+            background-color: #488dfa;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: white;
+            font-family: sans-serif; 
+            font-size: 14px; 
+        }
+        
+        .btn-style {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .btn-style button {
+            background-color: white;
+            border: none;
+            color: #488dfa;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 12px;
+            font-family: sans-serif;
+            margin: 4px 2px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 30px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Filtered Book Listings</h1>
+    <h2>Your Filters</h2>
+    <p>Category: {{ category }}</p>
+    <p>Title/Course/Price: {{ title_course_price }}</p>
+    <table>
+        <thead>
+            <tr>
+                {% for col in dataframe.columns %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in dataframe.values %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="btn-style">
+        <button onclick="window.location.href = '/';">Home Page</button>
+    </div> 
+</body>
+</html>
