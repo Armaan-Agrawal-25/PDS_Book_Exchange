@@ -2,4 +2,4 @@ Princeton Day School Online Book Exchange App: Designed and developed a Flask we
 
 - Wrote a Python application utilizing the Flask framework that allows a user to browse and upload book listings.
 - Utilized the Pandas library to handle displaying the listings and filtering said data based on user requests.
-- Wrote HTML and CSS code to specify the look of the application.
+- Wrote HTML code to specify the look and design of the application.
